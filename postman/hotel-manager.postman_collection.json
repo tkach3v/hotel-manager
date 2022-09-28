@@ -1,0 +1,869 @@
+{
+	"info": {
+		"_postman_id": "1dff77a7-905f-4667-86b0-ba55ebb0f3ed",
+		"name": "hotel-manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10715400"
+	},
+	"item": [
+		{
+			"name": "clients",
+			"item": [
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Мария Тылова\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hotel-manager}}/users",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/users/-1",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"users",
+								"-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/users",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "sort-type",
+									"value": "BY_NAME",
+									"disabled": true
+								},
+								{
+									"key": "sort-order",
+									"value": "DESCENDING",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": -5,\r\n    \"name\": \"Сергей Иванов\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hotel-manager}}/users",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/users/-5",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"users",
+								"-5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "services",
+			"item": [
+				{
+					"name": "addService",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"meat\",\r\n    \"price\": 789\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hotel-manager}}/services",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getServiceById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/services/-2",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"services",
+								"-2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getServices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/services",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"services"
+							],
+							"query": [
+								{
+									"key": "sort-type",
+									"value": "BY_PRICE",
+									"disabled": true
+								},
+								{
+									"key": "sort-order",
+									"value": "DESCENDING",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateService",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 7,\r\n    \"name\": \"diving\",\r\n    \"price\": 989.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hotel-manager}}/services",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteService",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/services/-7",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"services",
+								"-7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "room",
+			"item": [
+				{
+					"name": "addRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"number\": 6788,\r\n    \"price\": 6788,\r\n    \"status\": \"ACTIVE\",\r\n    \"capacity\": 5,\r\n    \"rating\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hotel-manager}}/rooms",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoomById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/rooms/-1",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"rooms",
+								"-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/rooms",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"rooms"
+							],
+							"query": [
+								{
+									"key": "sort-type",
+									"value": "BY_RATING",
+									"disabled": true
+								},
+								{
+									"key": "sort-order",
+									"value": "DESCENDING",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "ACTIVE",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRoom",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"number\": 999,\r\n    \"price\": 999,\r\n    \"status\": \"ACTIVE\",\r\n    \"capacity\": 5,\r\n    \"rating\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hotel-manager}}/rooms",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRoom",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/rooms/1",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"rooms",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getNumberOfRooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/rooms/amount?status=ACTIVE",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"rooms",
+								"amount"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "ACTIVE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAvailableRooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/rooms/available?date-start=01.09.2022&date-end=20.09.2022",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"rooms",
+								"available"
+							],
+							"query": [
+								{
+									"key": "date-start",
+									"value": "01.09.2022"
+								},
+								{
+									"key": "date-end",
+									"value": "20.09.2022"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reservation",
+			"item": [
+				{
+					"name": "addReservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateStart\": \"04.09.2022\",\r\n    \"dateEnd\": \"25.09.2022\",\r\n    \"client\": {\r\n        \"id\": -3\r\n    },\r\n    \"room\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hotel-manager}}/reservations",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReservations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/reservations",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"reservations"
+							],
+							"query": [
+								{
+									"key": "sort-type",
+									"value": "BY_DATE_END",
+									"disabled": true
+								},
+								{
+									"key": "sort-order",
+									"value": "DESCENDING",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReservationById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/reservations/5",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"reservations",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateReservation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"dateStart\": \"01.02.2017\",\r\n    \"dateEnd\": \"10.02.2017\",\r\n    \"client\": {\r\n        \"id\": -1,\r\n        \"name\": \"Алексей Петров\"\r\n    },\r\n    \"room\": {\r\n        \"id\": -1,\r\n        \"number\": 123,\r\n        \"price\": 100.0,\r\n        \"status\": \"OCCUPIED\",\r\n        \"capacity\": 1,\r\n        \"rating\": 3\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hotel-manager}}/reservations",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReservation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/reservations/8",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"reservations",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getGuestReservations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/reservations/guests",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"reservations",
+								"guests"
+							],
+							"query": [
+								{
+									"key": "sort-type",
+									"value": "BY_CLIENT_NAME",
+									"disabled": true
+								},
+								{
+									"key": "sort-order",
+									"value": "DESCENDING",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getNumberOfGuests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/reservations/guests/amount",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"reservations",
+								"guests",
+								"amount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/reservations/9/bill",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"reservations",
+								"9",
+								"bill"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLastGuestReservations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/reservations/last-guests?room-id=-3&until-date=12.12.2030",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"reservations",
+								"last-guests"
+							],
+							"query": [
+								{
+									"key": "room-id",
+									"value": "-3"
+								},
+								{
+									"key": "until-date",
+									"value": "12.12.2030"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "addOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"05.09.2022\",\r\n    \"client\": {\r\n        \"id\": -3,\r\n        \"name\": \"Сергей Вишневский\"\r\n    },\r\n    \"service\": {\r\n        \"id\": -2,\r\n        \"name\": \"cooking\",\r\n        \"price\": 500.0\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hotel-manager}}/orders",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/orders/2",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"orders",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/orders",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "sort-type",
+									"value": "BY_DATE",
+									"disabled": true
+								},
+								{
+									"key": "sort-order",
+									"value": "DESCENDING",
+									"disabled": true
+								},
+								{
+									"key": "client-id",
+									"value": "-3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"date\": \"02.04.2020\",\r\n    \"client\": {\r\n        \"id\": -3,\r\n        \"name\": \"Сергей Вишневский\"\r\n    },\r\n    \"service\": {\r\n        \"id\": -2,\r\n        \"name\": \"cooking\",\r\n        \"price\": 500.0\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hotel-manager}}/orders",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrder",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/orders/2",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"orders",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"miheeva@gmail.com\",\r\n    \"password\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hotel-manager}}/auth/login",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{hotel-manager}}/auth/logout",
+							"host": [
+								"{{hotel-manager}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0a2FjaGV2QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2Mzg1NzA5NiwiZXhwIjoxNjY0NDYxODk2fQ.NmDzQmJPBvJcINrIgjvyKETUE3DzF0wW6TJzLRxAFuc",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "hotel-manager",
+			"value": "http://localhost:8080"
+		}
+	]
+}
